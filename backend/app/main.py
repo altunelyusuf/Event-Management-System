@@ -1,6 +1,7 @@
 """
 CelebraTech Event Management System - Main Application
 Sprint 1: Infrastructure & Authentication
+Sprint 2: Event Management Core
 FastAPI application entry point
 """
 from fastapi import FastAPI, Request, status
@@ -13,7 +14,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth
+from app.api.v1 import auth, events, tasks
 
 
 @asynccontextmanager
@@ -155,11 +156,15 @@ async def root():
 
 
 # API v1 routes
+# Sprint 1: Authentication
 app.include_router(auth.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 2: Event Management
+app.include_router(events.router, prefix=settings.API_V1_PREFIX)
+app.include_router(tasks.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers will be added here:
-# app.include_router(events.router, prefix=settings.API_V1_PREFIX)
+
+# Future routers (Sprint 3+):
 # app.include_router(vendors.router, prefix=settings.API_V1_PREFIX)
 # app.include_router(bookings.router, prefix=settings.API_V1_PREFIX)
 # app.include_router(payments.router, prefix=settings.API_V1_PREFIX)
