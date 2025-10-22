@@ -18,6 +18,7 @@ Sprint 15: Budget Management System
 Sprint 16: Collaboration & Sharing System
 Sprint 17: AI & Recommendation Engine
 Sprint 18: Mobile App Foundation
+Sprint 19: Mobile App Features
 """
 
 # This file makes the models directory a Python package
@@ -216,6 +217,20 @@ from app.models.mobile import (
     MobileScreenView
 )
 
+from app.models.mobile_features import (
+    QRCode,
+    QRCodeScan,
+    MobileWalletPass,
+    MobileMediaUpload,
+    BiometricAuth,
+    MobileLocation,
+    Geofence,
+    MobileShare,
+    MobileWidget,
+    QuickAction,
+    QuickActionUsage
+)
+
 __all__ = [
     # User models
     "User",
@@ -372,4 +387,16 @@ __all__ = [
     "MobileFeatureFlagAssignment",
     "MobileAnalyticsEvent",
     "MobileScreenView",
+    # Mobile App Features models
+    "QRCode",
+    "QRCodeScan",
+    "MobileWalletPass",
+    "MobileMediaUpload",
+    "BiometricAuth",
+    "MobileLocation",
+    "Geofence",
+    "MobileShare",
+    "MobileWidget",
+    "QuickAction",
+    "QuickActionUsage",
 ]
