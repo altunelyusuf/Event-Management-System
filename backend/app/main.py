@@ -11,6 +11,7 @@ Sprint 8: Notification System
 Sprint 9: Guest Management System
 Sprint 10: Analytics & Reporting System
 Sprint 11: Document Management System
+Sprint 12: Advanced Task Management & Team Collaboration
 FastAPI application entry point
 """
 from fastapi import FastAPI, Request, status
@@ -23,7 +24,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration
 
 
 @asynccontextmanager
@@ -199,8 +200,11 @@ app.include_router(analytics.router, prefix=settings.API_V1_PREFIX)
 # Sprint 11: Document Management System
 app.include_router(documents.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 12: Advanced Task Management & Team Collaboration
+app.include_router(task_collaboration.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers (Sprint 12+):
+
+# Future routers (Sprint 13+):
 # app.include_router(calendar.router, prefix=settings.API_V1_PREFIX)
 
 

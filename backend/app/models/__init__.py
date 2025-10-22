@@ -11,6 +11,7 @@ Sprint 8: Notification System
 Sprint 9: Guest Management System
 Sprint 10: Analytics & Reporting System
 Sprint 11: Document Management System
+Sprint 12: Advanced Task Management & Team Collaboration
 """
 
 # This file makes the models directory a Python package
@@ -127,6 +128,17 @@ from app.models.document import (
     DocumentActivity
 )
 
+from app.models.task_collaboration import (
+    TaskTemplate,
+    TaskAssignment,
+    TaskTimeLog,
+    TaskChecklist,
+    TeamMember,
+    WorkloadSnapshot,
+    TaskBoard,
+    TaskLabel
+)
+
 __all__ = [
     # User models
     "User",
@@ -215,4 +227,13 @@ __all__ = [
     "DocumentSignature",
     "DocumentTemplate",
     "DocumentActivity",
+    # Task Collaboration models
+    "TaskTemplate",
+    "TaskAssignment",
+    "TaskTimeLog",
+    "TaskChecklist",
+    "TeamMember",
+    "WorkloadSnapshot",
+    "TaskBoard",
+    "TaskLabel",
 ]
