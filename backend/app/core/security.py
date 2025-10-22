@@ -183,6 +183,45 @@ async def get_current_user(
     return user
 
 
+async def get_optional_user(
+    credentials: Optional[HTTPAuthorizationCredentials] = Depends(HTTPBearer(auto_error=False)),
+    db: AsyncSession = Depends(get_db)
+) -> Optional[User]:
+    """
+    Get current user from JWT token if provided, otherwise return None
+
+    This is useful for public endpoints that can work with or without authentication.
+
+    Args:
+        credentials: Optional HTTP Authorization credentials
+        db: Database session
+
+    Returns:
+        Current user object if authenticated, None otherwise
+    """
+    if not credentials:
+        return None
+
+    try:
+        token = credentials.credentials
+        payload = decode_token(token)
+        user_id: str = payload.get("sub")
+        token_type: str = payload.get("type")
+
+        if user_id is None or token_type != "access":
+            return None
+
+        user_repo = UserRepository(db)
+        user = await user_repo.get_by_id(user_id)
+
+        if user is None or user.status != "ACTIVE":
+            return None
+
+        return user
+    except (JWTError, Exception):
+        return None
+
+
 async def get_current_active_user(
     current_user: User = Depends(get_current_user)
 ) -> User:

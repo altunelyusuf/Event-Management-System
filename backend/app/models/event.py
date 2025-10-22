@@ -124,6 +124,14 @@ class Event(Base):
     # Sprint 6: Reviews
     reviews = relationship("Review", back_populates="event", cascade="all, delete-orphan")
 
+    # Sprint 9: Guest Management
+    guests = relationship("Guest", back_populates="event", cascade="all, delete-orphan")
+    guest_groups = relationship("GuestGroup", back_populates="event", cascade="all, delete-orphan")
+    guest_invitations = relationship("GuestInvitation", back_populates="event", cascade="all, delete-orphan")
+    rsvp_responses = relationship("RSVPResponse", back_populates="event", cascade="all, delete-orphan")
+    seating_arrangements = relationship("SeatingArrangement", back_populates="event", cascade="all, delete-orphan")
+    guest_checkins = relationship("GuestCheckIn", back_populates="event", cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<Event {self.name} ({self.type})>"
 

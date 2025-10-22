@@ -8,6 +8,7 @@ Sprint 5: Payment Gateway Integration & Financial Management
 Sprint 6: Review and Rating System
 Sprint 7: Messaging System
 Sprint 8: Notification System
+Sprint 9: Guest Management System
 """
 
 # This file makes the models directory a Python package
@@ -95,6 +96,16 @@ from app.models.notification import (
     NotificationBatch
 )
 
+from app.models.guest import (
+    Guest,
+    GuestGroup,
+    GuestInvitation,
+    RSVPResponse,
+    SeatingArrangement,
+    GuestCheckIn,
+    DietaryRestriction
+)
+
 __all__ = [
     # User models
     "User",
@@ -160,4 +171,12 @@ __all__ = [
     "NotificationTemplate",
     "NotificationDevice",
     "NotificationBatch",
+    # Guest models
+    "Guest",
+    "GuestGroup",
+    "GuestInvitation",
+    "RSVPResponse",
+    "SeatingArrangement",
+    "GuestCheckIn",
+    "DietaryRestriction",
 ]
