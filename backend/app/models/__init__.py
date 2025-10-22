@@ -4,6 +4,7 @@ Sprint 1: Infrastructure & Authentication
 Sprint 2: Event Management Core
 Sprint 3: Vendor Profile Foundation
 Sprint 4: Booking & Quote System
+Sprint 5: Payment Gateway Integration & Financial Management
 """
 
 # This file makes the models directory a Python package
@@ -53,6 +54,17 @@ from app.models.booking import (
     BookingCancellation
 )
 
+from app.models.payment import (
+    PaymentGatewayConfig,
+    PaymentTransaction,
+    PaymentRefund,
+    PaymentDispute,
+    VendorPayout,
+    PayoutItem,
+    Invoice,
+    SavedPaymentMethod
+)
+
 __all__ = [
     # User models
     "User",
@@ -88,4 +100,13 @@ __all__ = [
     "Booking",
     "BookingPayment",
     "BookingCancellation",
+    # Payment models
+    "PaymentGatewayConfig",
+    "PaymentTransaction",
+    "PaymentRefund",
+    "PaymentDispute",
+    "VendorPayout",
+    "PayoutItem",
+    "Invoice",
+    "SavedPaymentMethod",
 ]
