@@ -9,6 +9,7 @@ Sprint 6: Review and Rating System
 Sprint 7: Messaging System
 Sprint 8: Notification System
 Sprint 9: Guest Management System
+Sprint 10: Analytics & Reporting System
 FastAPI application entry point
 """
 from fastapi import FastAPI, Request, status
@@ -21,7 +22,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics
 
 
 @asynccontextmanager
@@ -191,9 +192,12 @@ app.include_router(notifications.router, prefix=settings.API_V1_PREFIX)
 # Sprint 9: Guest Management System
 app.include_router(guests.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 10: Analytics & Reporting System
+app.include_router(analytics.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers (Sprint 10+):
-# app.include_router(analytics.router, prefix=settings.API_V1_PREFIX)
+
+# Future routers (Sprint 11+):
+# app.include_router(documents.router, prefix=settings.API_V1_PREFIX)
 
 
 # Development server

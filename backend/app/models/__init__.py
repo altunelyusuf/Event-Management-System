@@ -9,6 +9,7 @@ Sprint 6: Review and Rating System
 Sprint 7: Messaging System
 Sprint 8: Notification System
 Sprint 9: Guest Management System
+Sprint 10: Analytics & Reporting System
 """
 
 # This file makes the models directory a Python package
@@ -106,6 +107,15 @@ from app.models.guest import (
     DietaryRestriction
 )
 
+from app.models.analytics import (
+    AnalyticsSnapshot,
+    Report,
+    Metric,
+    Dashboard,
+    AuditLog,
+    EventCompletionRate
+)
+
 __all__ = [
     # User models
     "User",
@@ -179,4 +189,11 @@ __all__ = [
     "SeatingArrangement",
     "GuestCheckIn",
     "DietaryRestriction",
+    # Analytics models
+    "AnalyticsSnapshot",
+    "Report",
+    "Metric",
+    "Dashboard",
+    "AuditLog",
+    "EventCompletionRate",
 ]
