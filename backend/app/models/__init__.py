@@ -16,6 +16,7 @@ Sprint 13: Search & Discovery System
 Sprint 14: Calendar & Scheduling System
 Sprint 15: Budget Management System
 Sprint 16: Collaboration & Sharing System
+Sprint 17: AI & Recommendation Engine
 """
 
 # This file makes the models directory a Python package
@@ -186,6 +187,20 @@ from app.models.collaboration import (
     CollaborationPresence
 )
 
+from app.models.recommendation import (
+    UserBehavior,
+    UserPreference,
+    UserProfile,
+    Recommendation,
+    RecommendationFeedback,
+    VendorMatchingProfile,
+    EventVendorMatch,
+    MLModel,
+    Prediction,
+    Experiment,
+    ExperimentAssignment
+)
+
 __all__ = [
     # User models
     "User",
@@ -318,4 +333,16 @@ __all__ = [
     "ShareLink",
     "ResourceLock",
     "CollaborationPresence",
+    # AI & Recommendation Engine models
+    "UserBehavior",
+    "UserPreference",
+    "UserProfile",
+    "Recommendation",
+    "RecommendationFeedback",
+    "VendorMatchingProfile",
+    "EventVendorMatch",
+    "MLModel",
+    "Prediction",
+    "Experiment",
+    "ExperimentAssignment",
 ]
