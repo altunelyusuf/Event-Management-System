@@ -15,6 +15,7 @@ Sprint 12: Advanced Task Management & Team Collaboration
 Sprint 13: Search & Discovery System
 Sprint 14: Calendar & Scheduling System
 Sprint 15: Budget Management System
+Sprint 16: Collaboration & Sharing System
 """
 
 # This file makes the models directory a Python package
@@ -172,6 +173,19 @@ from app.models.budget import (
     CurrencyExchangeRate
 )
 
+from app.models.collaboration import (
+    EventCollaborator,
+    EventTeam,
+    TeamMember,
+    EventInvitation,
+    ActivityLog,
+    Comment,
+    Mention,
+    ShareLink,
+    ResourceLock,
+    CollaborationPresence
+)
+
 __all__ = [
     # User models
     "User",
@@ -293,4 +307,15 @@ __all__ = [
     "BudgetSnapshot",
     "CostForecast",
     "CurrencyExchangeRate",
+    # Collaboration & Sharing models
+    "EventCollaborator",
+    "EventTeam",
+    "TeamMember",
+    "EventInvitation",
+    "ActivityLog",
+    "Comment",
+    "Mention",
+    "ShareLink",
+    "ResourceLock",
+    "CollaborationPresence",
 ]
