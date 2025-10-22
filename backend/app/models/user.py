@@ -83,6 +83,11 @@ class User(Base):
     # Sprint 6: Reviews
     reviews_given = relationship("Review", foreign_keys="Review.reviewer_id", back_populates="reviewer")
 
+    # Sprint 8: Notifications
+    notifications = relationship("Notification", foreign_keys="Notification.user_id", back_populates="user", cascade="all, delete-orphan")
+    notification_preferences = relationship("NotificationPreference", back_populates="user", cascade="all, delete-orphan")
+    notification_devices = relationship("NotificationDevice", back_populates="user", cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<User {self.email} ({self.role})>"
 

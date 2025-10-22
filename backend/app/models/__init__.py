@@ -7,6 +7,7 @@ Sprint 4: Booking & Quote System
 Sprint 5: Payment Gateway Integration & Financial Management
 Sprint 6: Review and Rating System
 Sprint 7: Messaging System
+Sprint 8: Notification System
 """
 
 # This file makes the models directory a Python package
@@ -85,6 +86,15 @@ from app.models.messaging import (
     MessageReaction
 )
 
+from app.models.notification import (
+    Notification,
+    NotificationDelivery,
+    NotificationPreference,
+    NotificationTemplate,
+    NotificationDevice,
+    NotificationBatch
+)
+
 __all__ = [
     # User models
     "User",
@@ -143,4 +153,11 @@ __all__ = [
     "MessageAttachment",
     "TypingIndicator",
     "MessageReaction",
+    # Notification models
+    "Notification",
+    "NotificationDelivery",
+    "NotificationPreference",
+    "NotificationTemplate",
+    "NotificationDevice",
+    "NotificationBatch",
 ]

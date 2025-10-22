@@ -7,6 +7,7 @@ Sprint 4: Booking & Quote System
 Sprint 5: Payment Gateway Integration & Financial Management
 Sprint 6: Review and Rating System
 Sprint 7: Messaging System
+Sprint 8: Notification System
 FastAPI application entry point
 """
 from fastapi import FastAPI, Request, status
@@ -19,7 +20,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications
 
 
 @asynccontextmanager
@@ -183,10 +184,13 @@ app.include_router(reviews.router, prefix=settings.API_V1_PREFIX)
 # Sprint 7: Messaging System
 app.include_router(messaging.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 8: Notification System
+app.include_router(notifications.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers (Sprint 8+):
+
+# Future routers (Sprint 9+):
 # app.include_router(guests.router, prefix=settings.API_V1_PREFIX)
-# app.include_router(notifications.router, prefix=settings.API_V1_PREFIX)
+# app.include_router(analytics.router, prefix=settings.API_V1_PREFIX)
 
 
 # Development server
