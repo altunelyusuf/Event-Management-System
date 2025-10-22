@@ -17,6 +17,7 @@ Sprint 14: Calendar & Scheduling System
 Sprint 15: Budget Management System
 Sprint 16: Collaboration & Sharing System
 Sprint 17: AI & Recommendation Engine
+Sprint 18: Mobile App Foundation
 """
 
 # This file makes the models directory a Python package
@@ -201,6 +202,20 @@ from app.models.recommendation import (
     ExperimentAssignment
 )
 
+from app.models.mobile import (
+    MobileDevice,
+    MobileSession,
+    PushNotification,
+    DeepLink,
+    DeepLinkClick,
+    OfflineSyncQueue,
+    AppVersion,
+    MobileFeatureFlag,
+    MobileFeatureFlagAssignment,
+    MobileAnalyticsEvent,
+    MobileScreenView
+)
+
 __all__ = [
     # User models
     "User",
@@ -345,4 +360,16 @@ __all__ = [
     "Prediction",
     "Experiment",
     "ExperimentAssignment",
+    # Mobile App Foundation models
+    "MobileDevice",
+    "MobileSession",
+    "PushNotification",
+    "DeepLink",
+    "DeepLinkClick",
+    "OfflineSyncQueue",
+    "AppVersion",
+    "MobileFeatureFlag",
+    "MobileFeatureFlagAssignment",
+    "MobileAnalyticsEvent",
+    "MobileScreenView",
 ]
