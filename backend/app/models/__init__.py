@@ -13,6 +13,7 @@ Sprint 10: Analytics & Reporting System
 Sprint 11: Document Management System
 Sprint 12: Advanced Task Management & Team Collaboration
 Sprint 13: Search & Discovery System
+Sprint 14: Calendar & Scheduling System
 """
 
 # This file makes the models directory a Python package
@@ -149,6 +150,16 @@ from app.models.search import (
     SearchIndexStatus
 )
 
+from app.models.calendar import (
+    Calendar,
+    CalendarEvent,
+    RecurringEventRule,
+    VendorAvailability,
+    BookingConflict,
+    CalendarSync,
+    CalendarShare
+)
+
 __all__ = [
     # User models
     "User",
@@ -253,4 +264,12 @@ __all__ = [
     "SearchFilterPreset",
     "VendorMatchingScore",
     "SearchIndexStatus",
+    # Calendar & Scheduling models
+    "Calendar",
+    "CalendarEvent",
+    "RecurringEventRule",
+    "VendorAvailability",
+    "BookingConflict",
+    "CalendarSync",
+    "CalendarShare",
 ]
