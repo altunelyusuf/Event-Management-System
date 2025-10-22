@@ -10,6 +10,7 @@ Sprint 7: Messaging System
 Sprint 8: Notification System
 Sprint 9: Guest Management System
 Sprint 10: Analytics & Reporting System
+Sprint 11: Document Management System
 """
 
 # This file makes the models directory a Python package
@@ -116,6 +117,16 @@ from app.models.analytics import (
     EventCompletionRate
 )
 
+from app.models.document import (
+    Document,
+    DocumentFolder,
+    DocumentShare,
+    DocumentComment,
+    DocumentSignature,
+    DocumentTemplate,
+    DocumentActivity
+)
+
 __all__ = [
     # User models
     "User",
@@ -196,4 +207,12 @@ __all__ = [
     "Dashboard",
     "AuditLog",
     "EventCompletionRate",
+    # Document models
+    "Document",
+    "DocumentFolder",
+    "DocumentShare",
+    "DocumentComment",
+    "DocumentSignature",
+    "DocumentTemplate",
+    "DocumentActivity",
 ]
