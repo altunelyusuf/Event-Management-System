@@ -3,6 +3,7 @@ CelebraTech Event Management System - Database Models
 Sprint 1: Infrastructure & Authentication
 Sprint 2: Event Management Core
 Sprint 3: Vendor Profile Foundation
+Sprint 4: Booking & Quote System
 """
 
 # This file makes the models directory a Python package
@@ -43,6 +44,15 @@ from app.models.vendor import (
     VendorWorkingHours
 )
 
+from app.models.booking import (
+    BookingRequest,
+    Quote,
+    QuoteItem,
+    Booking,
+    BookingPayment,
+    BookingCancellation
+)
+
 __all__ = [
     # User models
     "User",
@@ -71,4 +81,11 @@ __all__ = [
     "VendorTeamMember",
     "VendorCertification",
     "VendorWorkingHours",
+    # Booking models
+    "BookingRequest",
+    "Quote",
+    "QuoteItem",
+    "Booking",
+    "BookingPayment",
+    "BookingCancellation",
 ]

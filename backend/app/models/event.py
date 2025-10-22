@@ -118,6 +118,8 @@ class Event(Base):
     milestones = relationship("EventMilestone", back_populates="event", cascade="all, delete-orphan")
     cultural_elements = relationship("EventCulturalElement", back_populates="event", cascade="all, delete-orphan")
     tasks = relationship("Task", back_populates="event", cascade="all, delete-orphan")
+    booking_requests = relationship("BookingRequest", back_populates="event", cascade="all, delete-orphan")
+    bookings = relationship("Booking", back_populates="event", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<Event {self.name} ({self.type})>"

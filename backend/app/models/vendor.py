@@ -132,6 +132,9 @@ class Vendor(Base):
     certifications = relationship("VendorCertification", back_populates="vendor", cascade="all, delete-orphan")
     working_hours = relationship("VendorWorkingHours", back_populates="vendor", cascade="all, delete-orphan")
     subcategories = relationship("VendorSubcategory", back_populates="vendor", cascade="all, delete-orphan")
+    booking_requests = relationship("BookingRequest", back_populates="vendor", cascade="all, delete-orphan")
+    quotes = relationship("Quote", back_populates="vendor", cascade="all, delete-orphan")
+    bookings = relationship("Booking", back_populates="vendor", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<Vendor {self.business_name} ({self.category})>"
