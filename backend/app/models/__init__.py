@@ -12,6 +12,7 @@ Sprint 9: Guest Management System
 Sprint 10: Analytics & Reporting System
 Sprint 11: Document Management System
 Sprint 12: Advanced Task Management & Team Collaboration
+Sprint 13: Search & Discovery System
 """
 
 # This file makes the models directory a Python package
@@ -139,6 +140,15 @@ from app.models.task_collaboration import (
     TaskLabel
 )
 
+from app.models.search import (
+    SavedSearch,
+    SearchAnalytics,
+    SearchSuggestion,
+    SearchFilterPreset,
+    VendorMatchingScore,
+    SearchIndexStatus
+)
+
 __all__ = [
     # User models
     "User",
@@ -236,4 +246,11 @@ __all__ = [
     "WorkloadSnapshot",
     "TaskBoard",
     "TaskLabel",
+    # Search & Discovery models
+    "SavedSearch",
+    "SearchAnalytics",
+    "SearchSuggestion",
+    "SearchFilterPreset",
+    "VendorMatchingScore",
+    "SearchIndexStatus",
 ]
