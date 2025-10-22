@@ -6,6 +6,7 @@ Sprint 3: Vendor Profile Foundation
 Sprint 4: Booking & Quote System
 Sprint 5: Payment Gateway Integration & Financial Management
 Sprint 6: Review and Rating System
+Sprint 7: Messaging System
 """
 
 # This file makes the models directory a Python package
@@ -74,6 +75,16 @@ from app.models.review import (
     VendorRatingCache
 )
 
+from app.models.messaging import (
+    Conversation,
+    ConversationParticipant,
+    Message,
+    MessageReadReceipt,
+    MessageAttachment,
+    TypingIndicator,
+    MessageReaction
+)
+
 __all__ = [
     # User models
     "User",
@@ -124,4 +135,12 @@ __all__ = [
     "ReviewHelpfulness",
     "ReviewReport",
     "VendorRatingCache",
+    # Messaging models
+    "Conversation",
+    "ConversationParticipant",
+    "Message",
+    "MessageReadReceipt",
+    "MessageAttachment",
+    "TypingIndicator",
+    "MessageReaction",
 ]
