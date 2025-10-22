@@ -2,6 +2,7 @@
 CelebraTech Event Management System - Database Models
 Sprint 1: Infrastructure & Authentication
 Sprint 2: Event Management Core
+Sprint 3: Vendor Profile Foundation
 """
 
 # This file makes the models directory a Python package
@@ -31,6 +32,17 @@ from app.models.task import (
     TaskAttachment
 )
 
+from app.models.vendor import (
+    Vendor,
+    VendorSubcategory,
+    VendorService,
+    VendorPortfolio,
+    VendorAvailability,
+    VendorTeamMember,
+    VendorCertification,
+    VendorWorkingHours
+)
+
 __all__ = [
     # User models
     "User",
@@ -50,4 +62,13 @@ __all__ = [
     "TaskDependency",
     "TaskComment",
     "TaskAttachment",
+    # Vendor models
+    "Vendor",
+    "VendorSubcategory",
+    "VendorService",
+    "VendorPortfolio",
+    "VendorAvailability",
+    "VendorTeamMember",
+    "VendorCertification",
+    "VendorWorkingHours",
 ]

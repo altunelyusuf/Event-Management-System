@@ -206,6 +206,29 @@ async def get_current_active_user(
     return current_user
 
 
+async def get_current_admin_user(
+    current_user: User = Depends(get_current_active_user)
+) -> User:
+    """
+    Get current admin user (ensures user has admin role)
+
+    Args:
+        current_user: Current active user from token
+
+    Returns:
+        Admin user object
+
+    Raises:
+        HTTPException: If user is not an admin
+    """
+    if current_user.role != "ADMIN":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Admin privileges required"
+        )
+    return current_user
+
+
 def require_role(allowed_roles: list[str]):
     """
     Dependency to require specific user roles

@@ -2,6 +2,7 @@
 CelebraTech Event Management System - Main Application
 Sprint 1: Infrastructure & Authentication
 Sprint 2: Event Management Core
+Sprint 3: Vendor Profile Foundation
 FastAPI application entry point
 """
 from fastapi import FastAPI, Request, status
@@ -14,7 +15,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks
+from app.api.v1 import auth, events, tasks, vendors
 
 
 @asynccontextmanager
@@ -163,9 +164,11 @@ app.include_router(auth.router, prefix=settings.API_V1_PREFIX)
 app.include_router(events.router, prefix=settings.API_V1_PREFIX)
 app.include_router(tasks.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 3: Vendor Marketplace
+app.include_router(vendors.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers (Sprint 3+):
-# app.include_router(vendors.router, prefix=settings.API_V1_PREFIX)
+
+# Future routers (Sprint 4+):
 # app.include_router(bookings.router, prefix=settings.API_V1_PREFIX)
 # app.include_router(payments.router, prefix=settings.API_V1_PREFIX)
 # app.include_router(guests.router, prefix=settings.API_V1_PREFIX)
