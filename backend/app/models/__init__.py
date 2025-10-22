@@ -14,6 +14,7 @@ Sprint 11: Document Management System
 Sprint 12: Advanced Task Management & Team Collaboration
 Sprint 13: Search & Discovery System
 Sprint 14: Calendar & Scheduling System
+Sprint 15: Budget Management System
 """
 
 # This file makes the models directory a Python package
@@ -160,6 +161,17 @@ from app.models.calendar import (
     CalendarShare
 )
 
+from app.models.budget import (
+    Budget,
+    BudgetCategory,
+    Expense,
+    BudgetTemplate,
+    BudgetAlert,
+    BudgetSnapshot,
+    CostForecast,
+    CurrencyExchangeRate
+)
+
 __all__ = [
     # User models
     "User",
@@ -272,4 +284,13 @@ __all__ = [
     "BookingConflict",
     "CalendarSync",
     "CalendarShare",
+    # Budget Management models
+    "Budget",
+    "BudgetCategory",
+    "Expense",
+    "BudgetTemplate",
+    "BudgetAlert",
+    "BudgetSnapshot",
+    "CostForecast",
+    "CurrencyExchangeRate",
 ]
