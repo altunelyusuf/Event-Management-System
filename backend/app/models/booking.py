@@ -341,6 +341,9 @@ class Booking(Base):
     payments = relationship("BookingPayment", back_populates="booking", cascade="all, delete-orphan")
     cancellation = relationship("BookingCancellation", back_populates="booking", uselist=False, cascade="all, delete-orphan")
 
+    # Sprint 6: Reviews
+    review = relationship("Review", back_populates="booking", uselist=False, cascade="all, delete-orphan")
+
 
 class BookingPayment(Base):
     """

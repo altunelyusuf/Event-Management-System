@@ -80,6 +80,9 @@ class User(Base):
     consents = relationship("UserConsent", back_populates="user", cascade="all, delete-orphan")
     oauth_connections = relationship("OAuthConnection", back_populates="user", cascade="all, delete-orphan")
 
+    # Sprint 6: Reviews
+    reviews_given = relationship("Review", foreign_keys="Review.reviewer_id", back_populates="reviewer")
+
     def __repr__(self):
         return f"<User {self.email} ({self.role})>"
 

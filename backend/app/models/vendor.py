@@ -136,6 +136,10 @@ class Vendor(Base):
     quotes = relationship("Quote", back_populates="vendor", cascade="all, delete-orphan")
     bookings = relationship("Booking", back_populates="vendor", cascade="all, delete-orphan")
 
+    # Sprint 6: Reviews
+    reviews = relationship("Review", back_populates="vendor", cascade="all, delete-orphan")
+    rating_cache = relationship("VendorRatingCache", back_populates="vendor", uselist=False, cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<Vendor {self.business_name} ({self.category})>"
 

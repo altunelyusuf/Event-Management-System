@@ -5,6 +5,7 @@ Sprint 2: Event Management Core
 Sprint 3: Vendor Profile Foundation
 Sprint 4: Booking & Quote System
 Sprint 5: Payment Gateway Integration & Financial Management
+Sprint 6: Review and Rating System
 """
 
 # This file makes the models directory a Python package
@@ -65,6 +66,14 @@ from app.models.payment import (
     SavedPaymentMethod
 )
 
+from app.models.review import (
+    Review,
+    ReviewResponse,
+    ReviewHelpfulness,
+    ReviewReport,
+    VendorRatingCache
+)
+
 __all__ = [
     # User models
     "User",
@@ -109,4 +118,10 @@ __all__ = [
     "PayoutItem",
     "Invoice",
     "SavedPaymentMethod",
+    # Review models
+    "Review",
+    "ReviewResponse",
+    "ReviewHelpfulness",
+    "ReviewReport",
+    "VendorRatingCache",
 ]

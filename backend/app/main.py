@@ -5,6 +5,7 @@ Sprint 2: Event Management Core
 Sprint 3: Vendor Profile Foundation
 Sprint 4: Booking & Quote System
 Sprint 5: Payment Gateway Integration & Financial Management
+Sprint 6: Review and Rating System
 FastAPI application entry point
 """
 from fastapi import FastAPI, Request, status
@@ -17,7 +18,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews
 
 
 @asynccontextmanager
@@ -175,10 +176,13 @@ app.include_router(bookings.router, prefix=settings.API_V1_PREFIX)
 # Sprint 5: Payment Gateway & Financial Management
 app.include_router(payments.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 6: Review and Rating System
+app.include_router(reviews.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers (Sprint 6+):
+
+# Future routers (Sprint 7+):
 # app.include_router(guests.router, prefix=settings.API_V1_PREFIX)
-# app.include_router(reviews.router, prefix=settings.API_V1_PREFIX)
+# app.include_router(messaging.router, prefix=settings.API_V1_PREFIX)
 
 
 # Development server

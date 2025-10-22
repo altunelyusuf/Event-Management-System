@@ -121,6 +121,9 @@ class Event(Base):
     booking_requests = relationship("BookingRequest", back_populates="event", cascade="all, delete-orphan")
     bookings = relationship("Booking", back_populates="event", cascade="all, delete-orphan")
 
+    # Sprint 6: Reviews
+    reviews = relationship("Review", back_populates="event", cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<Event {self.name} ({self.type})>"
 
