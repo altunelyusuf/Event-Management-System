@@ -91,6 +91,9 @@ class Task(Base):
     comments = relationship("TaskComment", back_populates="task", cascade="all, delete-orphan")
     attachments = relationship("TaskAttachment", back_populates="task", cascade="all, delete-orphan")
 
+    # Sprint 12: Advanced Task Management
+    assignments = relationship("TaskAssignment", back_populates="task", cascade="all, delete-orphan")
+
     def __repr__(self):
         return f"<Task {self.title} for event {self.event_id}>"
 
