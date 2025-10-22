@@ -399,4 +399,25 @@ __all__ = [
     "MobileWidget",
     "QuickAction",
     "QuickActionUsage",
+    # Final Sprints (20-24) models
+    "Integration",
+    "Webhook",
+    "WebhookDelivery",
+    "AdminAction",
+    "ModerationQueue",
+    "SystemConfig",
+    "PerformanceMetric",
+    "CacheEntry",
+    "SecurityEvent",
+    "RateLimitEntry",
+    "IPBlacklist",
+    "TestRun",
+    "APIDocumentation",
 ]
+
+# Final Sprints (20-24)
+from app.models.integration import Integration, Webhook, WebhookDelivery
+from app.models.admin import AdminAction, ModerationQueue, SystemConfig
+from app.models.performance import PerformanceMetric, CacheEntry
+from app.models.security import SecurityEvent, RateLimitEntry, IPBlacklist
+from app.models.testing import TestRun, APIDocumentation
