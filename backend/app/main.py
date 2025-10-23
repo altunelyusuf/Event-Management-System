@@ -25,7 +25,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin
 
 
 @asynccontextmanager
@@ -216,9 +216,14 @@ app.include_router(budget.router, prefix=settings.API_V1_PREFIX)
 # Sprint 16: Collaboration & Sharing System
 app.include_router(collaboration.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 17: AI & Recommendation Engine
+app.include_router(recommendation.router, prefix=settings.API_V1_PREFIX)
 
-# Phase 1 Complete! Future routers (Sprint 17+):
-# app.include_router(recommendation.router, prefix=settings.API_V1_PREFIX)
+# Sprint 21: Admin & Moderation System
+app.include_router(admin.router, prefix=settings.API_V1_PREFIX)
+
+
+# Phase 2 Complete! All 24 sprints implemented!
 
 
 # Development server
