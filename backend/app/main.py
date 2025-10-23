@@ -25,7 +25,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration
 
 
 @asynccontextmanager
@@ -207,9 +207,18 @@ app.include_router(task_collaboration.router, prefix=settings.API_V1_PREFIX)
 # Sprint 13: Search & Discovery System
 app.include_router(search.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 14: Calendar & Scheduling System
+app.include_router(calendar.router, prefix=settings.API_V1_PREFIX)
 
-# Future routers (Sprint 14+):
-# app.include_router(calendar.router, prefix=settings.API_V1_PREFIX)
+# Sprint 15: Budget Management System
+app.include_router(budget.router, prefix=settings.API_V1_PREFIX)
+
+# Sprint 16: Collaboration & Sharing System
+app.include_router(collaboration.router, prefix=settings.API_V1_PREFIX)
+
+
+# Phase 1 Complete! Future routers (Sprint 17+):
+# app.include_router(recommendation.router, prefix=settings.API_V1_PREFIX)
 
 
 # Development server
