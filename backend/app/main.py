@@ -25,7 +25,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin, mobile
 
 
 @asynccontextmanager
@@ -222,8 +222,11 @@ app.include_router(recommendation.router, prefix=settings.API_V1_PREFIX)
 # Sprint 21: Admin & Moderation System
 app.include_router(admin.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 18: Mobile App Foundation
+app.include_router(mobile.router, prefix=settings.API_V1_PREFIX)
 
-# Phase 2 Complete! All 24 sprints implemented!
+
+# Phase 3 in progress - Sprint 18 complete!
 
 
 # Development server
