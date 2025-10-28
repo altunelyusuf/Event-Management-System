@@ -25,7 +25,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin, mobile
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin, mobile, mobile_features
 
 
 @asynccontextmanager
@@ -225,8 +225,11 @@ app.include_router(admin.router, prefix=settings.API_V1_PREFIX)
 # Sprint 18: Mobile App Foundation
 app.include_router(mobile.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 19: Mobile App Features
+app.include_router(mobile_features.router, prefix=settings.API_V1_PREFIX)
 
-# Phase 3 in progress - Sprint 18 complete!
+
+# Phase 3 in progress - Sprints 18 & 19 complete!
 
 
 # Development server
