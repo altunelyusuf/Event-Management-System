@@ -25,7 +25,7 @@ import time
 
 from app.core.config import settings
 from app.core.database import init_db, close_db
-from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin, mobile, mobile_features, integration, performance
+from app.api.v1 import auth, events, tasks, vendors, bookings, payments, reviews, messaging, notifications, guests, analytics, documents, task_collaboration, search, calendar, budget, collaboration, recommendation, admin, mobile, mobile_features, integration, performance, security
 
 
 @asynccontextmanager
@@ -65,6 +65,22 @@ app = FastAPI(
 
 # Middleware Configuration
 # -----------------------
+
+# Security Middleware (Sprint 23: Security Hardening)
+from app.middleware.security_middleware import (
+    IPBlacklistMiddleware,
+    SecurityMonitoringMiddleware,
+    SecurityHeadersMiddleware
+)
+
+# Add security headers to all responses
+app.add_middleware(SecurityHeadersMiddleware)
+
+# Monitor for security threats (SQL injection, XSS, etc.)
+app.add_middleware(SecurityMonitoringMiddleware)
+
+# Block blacklisted IPs
+app.add_middleware(IPBlacklistMiddleware)
 
 # CORS Middleware
 app.add_middleware(
@@ -234,8 +250,11 @@ app.include_router(integration.router, prefix=settings.API_V1_PREFIX)
 # Sprint 22: Performance & Optimization
 app.include_router(performance.router, prefix=settings.API_V1_PREFIX)
 
+# Sprint 23: Security Hardening
+app.include_router(security.router, prefix=settings.API_V1_PREFIX)
 
-# Phase 3 in progress - Sprints 18, 19, 20 & 22 complete!
+
+# Phase 3 complete! Sprints 18-23 done. Sprint 24: Testing & Documentation remaining.
 
 
 # Development server
